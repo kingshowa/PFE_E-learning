@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-03-10T18:17:16.745Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="XrsEQwZDkd3Bwlbh5eFu" version="24.0.4" type="github">
+<mxfile host="app.diagrams.net" modified="2024-03-11T15:23:30.564Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="CFxHYLpkNmduBGjObwTj" version="24.0.4" type="github">
   <diagram name="Page-1" id="efa7a0a1-bf9b-a30e-e6df-94a7791c09e9">
     <mxGraphModel dx="1246" dy="493" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="826" pageHeight="1169" background="none" math="0" shadow="0">
       <root>
@@ -452,7 +452,7 @@
         </mxCell>
         <mxCell id="w8zBFitIXYVw2vcj3ith-126" value="1" style="resizable=0;align=left;verticalAlign=bottom;labelBackgroundColor=#ffffff;fontSize=10;strokeColor=#003366;shadow=1;fillColor=#D4E1F5;fontColor=#003366" parent="w8zBFitIXYVw2vcj3ith-125" connectable="0" vertex="1">
           <mxGeometry x="-1" relative="1" as="geometry">
-            <mxPoint y="17" as="offset" />
+            <mxPoint x="5" y="28" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="w8zBFitIXYVw2vcj3ith-127" value="0..n" style="resizable=0;align=right;verticalAlign=bottom;labelBackgroundColor=#ffffff;fontSize=10;strokeColor=#003366;shadow=1;fillColor=#D4E1F5;fontColor=#003366" parent="w8zBFitIXYVw2vcj3ith-125" connectable="0" vertex="1">
@@ -578,10 +578,10 @@
             <mxPoint x="13" y="-25" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="lJ4dhSoQrSadZ4z-J7H1-117" value="&lt;p style=&quot;margin: 0px; margin-top: 4px; text-align: center; text-decoration: underline;&quot;&gt;&lt;b&gt;CourseModule&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px; margin-left: 8px;&quot;&gt;CourseModuleID (PK)&lt;/p&gt;&lt;p style=&quot;margin: 0px; margin-left: 8px;&quot;&gt;CourseID (FK)&lt;/p&gt;&lt;p style=&quot;margin: 0px; margin-left: 8px;&quot;&gt;ModuleID (FK)&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;strokeColor=#003366;shadow=1;fillColor=#D4E1F5;fontColor=#003366" vertex="1" parent="1">
+        <mxCell id="lJ4dhSoQrSadZ4z-J7H1-117" value="&lt;p style=&quot;margin: 0px; margin-top: 4px; text-align: center; text-decoration: underline;&quot;&gt;&lt;b&gt;CourseModule&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px; margin-left: 8px;&quot;&gt;CourseModuleID (PK)&lt;/p&gt;&lt;p style=&quot;margin: 0px; margin-left: 8px;&quot;&gt;CourseID (FK)&lt;/p&gt;&lt;p style=&quot;margin: 0px; margin-left: 8px;&quot;&gt;ModuleID (FK)&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;strokeColor=#003366;shadow=1;fillColor=#D4E1F5;fontColor=#003366" parent="1" vertex="1">
           <mxGeometry x="527" y="735" width="160" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="lJ4dhSoQrSadZ4z-J7H1-118" value="" style="endArrow=open;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" target="lJ4dhSoQrSadZ4z-J7H1-117" parent="1">
+        <mxCell id="lJ4dhSoQrSadZ4z-J7H1-118" value="" style="endArrow=open;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" target="lJ4dhSoQrSadZ4z-J7H1-117" edge="1">
           <mxGeometry x="519.3599999999999" y="200" as="geometry">
             <mxPoint x="610" y="970" as="sourcePoint" />
             <mxPoint x="440" y="996" as="targetPoint" />
@@ -590,7 +590,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="lJ4dhSoQrSadZ4z-J7H1-119" value="*" style="resizable=0;align=right;verticalAlign=top;labelBackgroundColor=#ffffff;fontSize=10;strokeColor=#003366;shadow=1;fillColor=#D4E1F5;fontColor=#003366" connectable="0" vertex="1" parent="lJ4dhSoQrSadZ4z-J7H1-118">
+        <mxCell id="lJ4dhSoQrSadZ4z-J7H1-119" value="*" style="resizable=0;align=right;verticalAlign=top;labelBackgroundColor=#ffffff;fontSize=10;strokeColor=#003366;shadow=1;fillColor=#D4E1F5;fontColor=#003366" parent="lJ4dhSoQrSadZ4z-J7H1-118" connectable="0" vertex="1">
           <mxGeometry x="1" relative="1" as="geometry">
             <mxPoint x="-7" as="offset" />
           </mxGeometry>
