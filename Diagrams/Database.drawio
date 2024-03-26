@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-03-24T14:14:28.469Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="2EQBMV5H35ubVuP1D1At" version="24.0.7" type="github">
+<mxfile host="app.diagrams.net" modified="2024-03-26T12:54:33.792Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="jryoW4RCs5TZbkIWaypH" version="24.0.7" type="github">
   <diagram name="Page-1" id="efa7a0a1-bf9b-a30e-e6df-94a7791c09e9">
     <mxGraphModel dx="1246" dy="491" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="826" pageHeight="1169" background="none" math="0" shadow="0">
       <root>
@@ -627,6 +627,46 @@
             <Array as="points">
               <mxPoint x="665" y="40" />
             </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CzyOsCIZshbKZ3N66Nqr-109" value="&lt;p style=&quot;margin: 0px; margin-top: 4px; text-align: center; text-decoration: underline;&quot;&gt;&lt;b&gt;Marks&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px; margin-left: 8px;&quot;&gt;MarkID&lt;/p&gt;&lt;p style=&quot;margin: 0px; margin-left: 8px;&quot;&gt;UserID (FK)&lt;/p&gt;&lt;p style=&quot;margin: 0px; margin-left: 8px;&quot;&gt;QuizeID (FK)&lt;/p&gt;&lt;p style=&quot;margin: 0px; margin-left: 8px;&quot;&gt;MarkObtained&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;strokeColor=#003366;shadow=1;fillColor=#D4E1F5;fontColor=#003366" vertex="1" parent="1">
+          <mxGeometry x="296" y="960" width="160" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="CzyOsCIZshbKZ3N66Nqr-110" value="" style="endArrow=open;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=-0.008;exitY=0.603;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" target="CzyOsCIZshbKZ3N66Nqr-109" parent="1" source="vgat6i_KtTklt4zkiUlj-124">
+          <mxGeometry x="519.3599999999999" y="200" as="geometry">
+            <mxPoint x="880" y="980" as="sourcePoint" />
+            <mxPoint x="476" y="1014" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="860" y="960" />
+              <mxPoint x="860" y="1140" />
+              <mxPoint x="376" y="1140" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CzyOsCIZshbKZ3N66Nqr-112" value="*" style="resizable=0;align=right;verticalAlign=top;labelBackgroundColor=#ffffff;fontSize=10;strokeColor=#003366;shadow=1;fillColor=#D4E1F5;fontColor=#003366" connectable="0" vertex="1" parent="CzyOsCIZshbKZ3N66Nqr-110">
+          <mxGeometry x="1" relative="1" as="geometry">
+            <mxPoint x="10" y="-30" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CzyOsCIZshbKZ3N66Nqr-113" value="tracks" style="endArrow=none;edgeStyle=orthogonalEdgeStyle;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.013;exitY=0.847;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="25" target="CzyOsCIZshbKZ3N66Nqr-109">
+          <mxGeometry as="geometry">
+            <mxPoint x="10" y="190" as="sourcePoint" />
+            <mxPoint x="200" y="1030" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="10" y="215" />
+              <mxPoint x="10" y="1013" />
+            </Array>
+            <mxPoint x="-139" y="-50" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CzyOsCIZshbKZ3N66Nqr-114" value="1" style="resizable=0;align=left;verticalAlign=bottom;labelBackgroundColor=#ffffff;fontSize=10;strokeColor=#003366;shadow=1;fillColor=#D4E1F5;fontColor=#003366" connectable="0" vertex="1" parent="CzyOsCIZshbKZ3N66Nqr-113">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="-20" y="20" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CzyOsCIZshbKZ3N66Nqr-115" value="1..n" style="resizable=0;align=right;verticalAlign=bottom;labelBackgroundColor=#ffffff;fontSize=10;strokeColor=#003366;shadow=1;fillColor=#D4E1F5;fontColor=#003366" connectable="0" vertex="1" parent="CzyOsCIZshbKZ3N66Nqr-113">
+          <mxGeometry x="1" relative="1" as="geometry">
+            <mxPoint x="-6" y="-5" as="offset" />
           </mxGeometry>
         </mxCell>
       </root>
