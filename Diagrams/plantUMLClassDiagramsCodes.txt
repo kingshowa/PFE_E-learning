@@ -1,0 +1,250 @@
+// Users
+@startuml
+package "Users Management" {
+  class User {
+    +userId: int
+    +name: String
+    +email: String
+    +password: String
+    +role: String
+    +login()
+    +logout()
+    +updateProfile()
+  }
+  
+  class Student {
+    +enrolledCourses: List<Course>
+    +progress: Map<Course, Double>
+    +enrollCourse()
+    +trackProgress()
+    +participateInDiscussion()
+  }
+  
+  class Instructor {
+    +coursesTaught: List<Course>
+    +createCourse()
+    +updateCourseContent()
+    +previewCourse()
+    +viewAnalytics()
+  }
+  
+  class Administrator {
+    +managedUsers: List<User>
+    +approvedCourses: List<Course>
+    +createdPrograms: List<Program>
+    +manageUserAccounts()
+    +reviewCourse()
+    +createProgram()
+    +generateReports()
+  }
+  
+  class Enrollment {
+  }
+}
+
+User <|-- Student
+User <|-- Instructor
+User <|-- Administrator
+Enrollment "0..*" --> "1" Student
+@enduml
+
+
+
+//Content
+@startuml
+package "Content Management" {
+  class Program {
+    +programId: int
+    +title: String
+    +description: String
+    +courses: List<Course>
+    +createProgram()
+    +updateProgram()
+    +deleteProgram()
+  }
+  
+  class Course {
+    +courseId: int
+    +title: String
+    +description: String
+    +modules: List<Module>
+    +createCourse()
+    +updateCourse()
+    +deleteCourse()
+  }
+  
+  class Module {
+    +moduleId: int
+    +title: String
+    +description: String
+    +contents: List<Content>
+    +createModule()
+    +updateModule()
+    +deleteModule()
+  }
+  
+  abstract class Content {
+    +contentId: int
+    +title: String
+    +description: String
+    +addContent()
+    +updateContent()
+    +deleteContent()
+  }
+  
+  class VideoContent {
+    +videoUrl: String
+    +duration: int
+    +playVideo()
+    +pauseVideo()
+  }
+  
+  class ReadingContent {
+    +text: LongText
+    +read()
+  }
+  
+  class DocumentContent {
+    +documentUrl: String
+    +viewDocument()
+    +downloadDocument()
+  }
+  
+  class Quiz {
+    +quizId: int
+    +title: String
+    +questions: List<Question>
+    +startQuiz()
+    +submitQuiz()
+  }
+  
+  class Question {
+    +questionId: int
+    +text: LongText
+    +options: List<Option>
+    +addOption()
+    +removeOption()
+  }
+  
+  class Option {
+    +optionId: int
+    +text: String
+    +isCorrect: boolean
+    +selectOption()
+  }
+
+  class Student {
+  }
+
+class Enrollment {
+    +enrollmentId: int
+    +studentId: int
+    +courseId: int
+    +programId: int
+    +enrollmentDate: Date
+    +progress: Double
+    +trackProgress()
+    +completeCourse()
+    +completeProgram()
+  }
+
+ 
+  Program "0..*" -- "1..*" Course : contains
+  Course "0..*" -- "1..*" Module : contains
+  Module "1" -- "1..*" Content : contains
+  Student "1" --> "0..*" Enrollment
+  Content <|-- VideoContent
+  Content <|-- ReadingContent
+  Content <|-- DocumentContent
+  Content <|-- Quiz
+  Quiz "1" -- "1..*" Question : contains
+  Question "1" -- "2..*" Option : contains
+  Enrollment "0..*" --> "1" Course
+  Enrollment "0..*" --> "1" Program
+  
+  Program -[hidden]right-> Course
+  Course -[hidden]right-> Module
+  Content -[hidden]down-> Quiz
+  Student -[hidden]right-> Enrollment
+  Program -[hidden]down-> Enrollment
+  Course -[hidden]down-> Enrollment
+
+  VideoContent -[hidden]right-> ReadingContent
+  ReadingContent -[hidden]right-> DocumentContent
+  DocumentContent -[hidden]right-> Quiz
+  Question -[hidden]right-> Option
+}
+@enduml
+
+
+//Communication
+@startuml
+
+package "Communication" {
+  class LiveSession {
+    +sessionId: int
+    +title: String
+    +startTime: DateTime
+    +duration: int
+    +participants: List<User>
+    +startSession()
+    +endSession()
+  }
+  
+  class DiscussionForum {
+    +forumId: int
+    +title: String
+    +description: String
+    +posts: List<Post>
+    +createForum()
+    +deleteForum()
+  }
+  
+  class Post {
+    +postId: int
+    +author: User
+    +content: String
+    +messages: List<Message>
+    +createPost()
+    +deletePost()
+  }
+  
+  abstract class Message {
+    +messageId: int
+    +author: User
+    +content: String
+    +likes: List<Like>
+    +createMessage()
+    +deleteMessage()
+  }
+  
+  class PostMessage {
+    +postId: int
+    +belongsToPost: Post
+  }
+  
+  class PrivateMessage {
+    +receiver: User
+    +sendPrivateMessage()
+  }
+  
+  class Like {
+    +likeId: int
+    +user: User
+    +likeMessage()
+  }
+ 
+
+  DiscussionForum "1" -- "0..*" Post : contains
+  Post "1" -- "0..*" PostMessage : contains
+  Message <|-- PostMessage
+  Message <|-- PrivateMessage
+  PostMessage "1" -- "0..*" Like : contains
+  PrivateMessage "1" -- "0..*" Like : contains
+
+  DiscussionForum -[hidden]right-> Post
+  Message -[hidden]left-> Like
+}
+
+@enduml
+

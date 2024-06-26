@@ -1,0 +1,120 @@
+//Enroll in course
+
+@startuml
+actor Student
+participant "Course Catalog" as Catalog
+participant "Enrollment System" as Enrollment
+participant "Payment Gateway" as Payment
+participant "Notification Service" as Notification
+participant "Database" as DB
+
+Student -> Catalog: View Course List
+Catalog -> DB: Retrieve Course List
+DB --> Catalog: Return Course List
+Catalog --> Student: Display Course List
+
+Student -> Catalog: Select Course
+Catalog -> Enrollment: Request Enrollment
+Enrollment -> DB: Check Course Availability
+DB --> Enrollment: Confirm Availability
+
+Enrollment -> Payment: Process Payment
+Payment -> Student: Request Payment Details
+Student --> Payment: Provide Payment Details
+Payment -> Payment: Validate Payment
+Payment --> Enrollment: Payment Successful
+
+alt Payment Successful
+    Enrollment -> DB: Register Student for Course
+    DB --> Enrollment: Confirm Registration
+
+    Enrollment -> Notification: Send Enrollment Confirmation
+    Notification -> Student: Send Confirmation Message
+else Payment Failed
+    Payment -> Notification: Send Payment Failure Notification
+    Notification -> Student: Send Payment Failure Message
+end
+@enduml
+
+
+// Follow course
+@startuml
+actor Student
+participant "Dashboard" as Dashboard
+participant "Course Study Panel" as StudyPanel
+participant "Database" as DB
+
+Student -> Dashboard: Select Current Course
+Dashboard -> DB: Retrieve Course Information
+DB --> Dashboard: Return Course Information
+Dashboard -> StudyPanel: Open Course Study Panel
+
+StudyPanel -> DB: Retrieve First Uncompleted Module
+DB --> StudyPanel: Return Uncompleted Module
+StudyPanel -> Student: Display Module Content
+
+alt Module Content Access
+    Student -> StudyPanel: Access Videos, Readings, Documents, Quizzes
+else Switch Module
+    Student -> StudyPanel: Switch to Another Module
+    StudyPanel -> DB: Retrieve Selected Module Content
+    DB --> StudyPanel: Return Module Content
+    StudyPanel -> Student: Display Selected Module Content
+end
+@enduml
+
+// Take quiz
+
+@startuml
+actor Student
+participant "Module Page" as ModulePage
+participant "Quiz Panel" as QuizPanel
+participant "Database" as DB
+participant "Quiz System" as QuizSystem
+
+Student -> ModulePage: Click "Take Quiz" Button
+ModulePage -> QuizPanel: Open Quiz Panel
+
+QuizPanel -> DB: Retrieve Quiz Questions and Options
+DB --> QuizPanel: Return Quiz Data
+
+QuizPanel -> Student: Display Quiz Questions and Options
+Student -> QuizPanel: Complete Quiz (Select Answers, Confirm, Submit)
+
+QuizPanel -> QuizSystem: Submit Answers
+QuizSystem -> QuizSystem: Process Marking
+QuizSystem -> DB: Save Mark Obtained
+DB --> QuizSystem: Confirmation of Save
+
+QuizSystem -> QuizPanel: Return Pass/Fail Message and Correct Answers
+QuizPanel -> Student: Display Pass/Fail Message and Correct Answers
+@enduml
+
+// Attend Live session
+
+@startuml
+actor Student
+participant "Course Panel" as CoursePanel
+participant "Live Session Room" as LiveSessionRoom
+participant "Live Session Service" as LiveSessionService
+
+Student -> CoursePanel: Click "Join Meeting" Button
+CoursePanel -> LiveSessionRoom: Open Live Session Room with User's Name
+
+LiveSessionRoom -> Student: Display Name Entry and Options
+Student -> LiveSessionRoom: Confirm Name and Join Session
+
+LiveSessionRoom -> LiveSessionService: Authenticate and Join Session
+LiveSessionService --> LiveSessionRoom: Join Confirmation
+
+LiveSessionRoom -> Student: Join Confirmation and Interface Display
+
+Student -> LiveSessionRoom: Toggle Camera On/Off
+Student -> LiveSessionRoom: Mute/Unmute
+Student -> LiveSessionRoom: Chat
+
+Student -> LiveSessionRoom: Click "Leave Room" Button
+LiveSessionRoom -> LiveSessionService: End Session for User
+LiveSessionService --> LiveSessionRoom: Session End Confirmation
+LiveSessionRoom --> Student: Confirm Session End and Close Room
+@enduml
